@@ -1,6 +1,5 @@
 use std::fs;
 use std::path::Path;
-use std::io;
 
 pub fn scan_directory<P: AsRef<Path>>(path: P) -> (Vec<String>, Vec<String>) {
     let mut dirs = Vec::new();
