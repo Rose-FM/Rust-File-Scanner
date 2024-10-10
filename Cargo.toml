@@ -1,0 +1,30 @@
+[workspace]
+members = [
+  "crates/scanner",
+  "crates/home-scan"
+]
+resolver = "2"
+
+[workspace.package]
+authors = ["James Rose"]
+homepage = "https://github.com/Rose-FM/Rust-File-Scanner"
+repository = "https://github.com/Rose-FM/Rust-File-Scanner"
+license = "MIT"
+edition = "2021"
+rust-version = "1.77.2"
+
+# default to small, optimized workspace release binaries
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+incremental = false
+opt-level = "s"
+strip = true
+
+[profile.release-size-optimized]
+inherits = "release"
+codegen-units = 1
+lto = true
+incremental = false
+opt-level = "s"
